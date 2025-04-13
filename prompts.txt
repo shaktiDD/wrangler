@@ -1,0 +1,25 @@
+DeepSeek:
+
+Break down the provided document into a list of very small, individual actions. Think like a project manager with 30 years of experience to create these detailed steps.
+
+ChatGPT:
+
+Analyze the structure and rules of this file as if you were a Java developer with 30 years of experience. Explain how the file is organized and describe the process for adding new features to it.
+
+Cursor:
+
+→ Problem Identification:** What is the core problem or task that needs to be addressed?
+→ Code Location Question (Units):** Where in the codebase should I look to add support for units like 'KB' when dealing with values? I see a 'NumberToken' - should I follow a similar approach?
+→ Lexer Conflict Question (Time):** If I modify the part of the code that recognizes units to handle time durations like '150ms', will it cause problems with how numbers are currently understood? I need to check how text and number units are defined.
+→ Implementation Pattern Question (Units):** There's a 'Token.java' file. It seems new unit types need their own logic for understanding them. How are 'ByteSize' and 'TimeDuration' different from 'NumberToken' in how they are implemented?
+→ Grammar Issue Question (Units):** I'm having trouble with the rules that define the structure of the language. I added a 'BYTE_SIZE' rule, but it's causing conflicts. How do I correctly define the smaller parts of units like 'KB' and 'MB' without breaking the existing rules?
+→ Case Sensitivity Question (Units):** When parsing byte values, should '10kb' be considered the same as '10KB'? The specification isn't clear - what's the project's standard for case sensitivity in units?
+→ Data Processing Question (Aggregation):** For the 'AggregateStatsDirective', how does the 'ExecutorContext' handle groups of rows? I need to understand how 'GroupByAggregate' stores temporary values.
+→ Parser Error Question (Units):** The code that interprets the structure is giving errors for values like '10MB'. Could the order in which the units are recognized be wrong? Here's the relevant part of the grammar: <snippet>
+→ Decimal Support Question (Units):** The 'ByteSizeTest' is failing with decimal values like '1.5MB'. Should we allow decimal numbers for these units, or should we only allow whole numbers like other units?
+→ Token Recognition Question (Units):** An integration test is failing with the error 'Unknown token BYTE_SIZE'. Did I forget to register the new unit type in the 'Token.java' file somewhere?
+→ Style Guide Check:** Please review my code against the style guidelines used in this project and tell me what changes need to be made.
+
+Gemini:
+
+Research the possible causes of the error message <error message> and find different ways to fix it.
